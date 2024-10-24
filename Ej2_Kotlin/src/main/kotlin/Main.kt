@@ -2,6 +2,6 @@ package org.example
 
 fun main() {
     val ejercicios: Ejercicios = Ejercicios()
-
-    ejercicios.ejercicio9()
+    val menu = Menu(ejercicios)
+    menu.menuPrincipal()
 }
