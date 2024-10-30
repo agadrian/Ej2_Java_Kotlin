@@ -51,7 +51,7 @@ public class Ejercicios {
         try{
             Double numero = scanner.nextDouble();
             Double radio = Math.PI * (numero * numero);
-            System.out.println("El area de un circulo de " + numero + " es: " + String.format("%.2f", radio));
+            System.out.println("El area de un circulo de " + numero + " de radio es: " + String.format("%.2f", radio));
 
         }catch (Exception e){
             System.out.println("Debes introducir un valor numerico. Error: " + e);
@@ -318,7 +318,18 @@ public class Ejercicios {
      * usuario crear un objeto de tipo Anime con estos atributos y mostrar su información.
      */
     public void ejercicio13(){
-        Anime anime = new Anime("Anime", 23, "NaN");
+        System.out.println("Introduce datos del anime: ");
+        System.out.print("Nombre: ");
+        String nombre = scanner.next();
+
+        System.out.print("Episodios: ");
+        String episodios = scanner.next();
+
+        System.out.print("Genero: ");
+        String genero = scanner.next();
+
+        Anime anime = new Anime(nombre, episodios, genero);
+        System.out.println("\nInformacion del anime: ");
         anime.mostrarInfo();
     }
 
@@ -332,13 +343,26 @@ public class Ejercicios {
     public void ejercicio14(){
         InventarioVideojuegos inventarioJuegos = new InventarioVideojuegos();
 
-        Videojuego juego1 = new Videojuego("COD", "PS4");
-        Videojuego juego2 = new Videojuego("FIFA", "PS4");
+        Videojuego juego1 = new Videojuego("COD", "PS4", "40");
+        Videojuego juego2 = new Videojuego("FIFA", "PS4", "799");
 
         inventarioJuegos.addVideojuego(juego1);
         inventarioJuegos.addVideojuego(juego2);
-        inventarioJuegos.mostrarVideojuegos();
 
+        System.out.println("Introduce datos videojuego: ");
+        System.out.print("Titulo: ");
+        String titulo = scanner.next();
+
+        System.out.print("Plataforma: ");
+        String plataforma = scanner.next();
+
+        System.out.print("Horas jugadadas: ");
+        String horas = scanner.next();
+
+        Videojuego juego3 = new Videojuego(titulo, plataforma, horas);
+        inventarioJuegos.addVideojuego(juego3);
+
+        inventarioJuegos.mostrarVideojuegos();
         inventarioJuegos.removeVideojuego(juego1);
         inventarioJuegos.mostrarVideojuegos();
 

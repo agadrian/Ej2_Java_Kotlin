@@ -6,7 +6,7 @@ public class Main {
     public static void main(String[] args) throws IOException {
 
         Ejercicios ejcs = new Ejercicios();
-
-        ejcs.ejercicio14();
+        Menu menu = new Menu(ejcs);
+        menu.menuPrincipal();
     }
 }

@@ -28,7 +28,7 @@ public class InventarioVideojuegos {
         if (videojuegos.size() > 0) {
             System.out.println("Listado de videojuegos: ");
             videojuegos.forEach(videojuego -> {
-                System.out.println("- " + videojuego.titulo);
+                videojuego.mostrarInfo();
             });
         }else{
             System.out.println("No hay videojuegos que mostrar");
